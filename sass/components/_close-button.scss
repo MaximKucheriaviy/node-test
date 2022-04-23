@@ -1,0 +1,27 @@
+.close-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    display: flex;  
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.close-button__icon{
+  fill: var(--font-black2);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus{
+      fill: $accentColor;
+  }
+}

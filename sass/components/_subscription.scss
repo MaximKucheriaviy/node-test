@@ -1,0 +1,73 @@
+.subscription{
+    // margin-left: auto;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: 768px){
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and (min-width: 1200px){
+        margin-right: 0;
+    }
+    @media screen and (min-width: 1200px){
+        text-align: left;
+        width:570px;
+    }
+}
+
+.subscription__container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 20px;
+    margin-top: 20px;
+    @media screen and (min-width: 1200px){
+        flex-direction: row;
+    }
+}
+
+.subscription__input{
+    width: 100%;
+    height: 50px;
+    padding-left: 16px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color:transparent;
+    border-radius: 4px;
+
+    @media screen and (min-width: 1200px){
+        width: 358px;
+    }
+    
+    &::placeholder{
+        font-size: 16px;
+        line-height: 1.25;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+
+.subscription__button{
+    display: flex;
+    align-items: center;
+    
+  
+    width: 200px;
+    margin-top: 0;
+    // margin-left: 12px;
+    padding-left: 29px;
+    padding-right: 28px;
+  
+    border:none;
+}
+
+.subscription__icon{
+    display: inline-block;
+    height: 24px;
+    margin-left: 10px;
+
+    fill: $fontWhite;
+}
+  

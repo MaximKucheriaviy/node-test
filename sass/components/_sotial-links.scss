@@ -1,0 +1,47 @@
+.sotial-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.sotial-links__icon {
+    fill: $iconsGray;
+  
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sotial-links__link {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: block;
+    line-height: 0;
+    
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: 1200px){
+        border-radius: 50%;
+  
+        &:hover,
+        &:focus{
+            background-color: $accentColor;
+            
+            & > .sotial-links__icon{
+                fill: $fontWhite;
+            }
+        }
+    }
+    
+}
+
+.footer-sotial-links__link{
+    background-color: $iconsTranspered;
+    border-radius: 50%;
+}
+.footer-sotial-links__icon{
+    fill: $fontWhite;
+}
