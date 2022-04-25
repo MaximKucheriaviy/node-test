@@ -2,6 +2,8 @@ const http = require('http')
 const fs = require('file-system');
 const path = require('path');
 const mime = require('mime-types');
+const formDataParser = require('./formDataPerser');
+const dbData = require('./mysqlGet.js');
 
 const server = http.createServer((req, res) => {
     let filePath;
@@ -24,9 +26,20 @@ const server = http.createServer((req, res) => {
             }
         })
     }
-    else if(req.method == "POST"){
-        res.write('I am node js and this is post req');
-        res.end();
+    else if (req.method == "POST") {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+            let data = formDataParser(body);
+            let p = dbData.getDataFromDB(data.sql);
+            p.then(() => {
+                data = dbData.data;
+                res.end(JSON.stringify(data));
+            })
+            
+        });
     }
 })
 
