@@ -24,6 +24,10 @@ const server = http.createServer((req, res) => {
             }
         })
     }
+    else if(req.method == "POST"){
+        res.write('I am node js and this is post req');
+        res.end();
+    }
 })
 
 module.exports = {
