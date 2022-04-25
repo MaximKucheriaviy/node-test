@@ -1,7 +1,7 @@
 document.querySelector('.reqButton').onclick = () =>{
     let data = new FormData;
     data.append('NodeReqestType', 'mysql');
-    data.append('sql', 'SHOW TABLES');
+    data.append('sql', 'SELECT * FROM users');
     xhr = new XMLHttpRequest;
     xhr.open("POST", "127. 0. 0. 1:3000", false);
 

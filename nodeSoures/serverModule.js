@@ -32,11 +32,12 @@ const server = http.createServer((req, res) => {
             body += chunk.toString();
         });
         req.on('end', () => {
-            let data = formDataParser(body);
-            let p = dbData.getDataFromDB(data.sql);
+            let r = formDataParser(body);
+            console.log(r.sql);
+            let p = dbData.getDataFromDB(r.sql);
             p.then(() => {
-                data = dbData.data;
-                res.end(JSON.stringify(data));
+                console.log(dbData.DBresponse)
+                res.end(JSON.stringify(dbData.DBresponse));
             })
             
         });

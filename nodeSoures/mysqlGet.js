@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 let dbData = {
-  res: new Array,
+  DBresponse: new Array,
   getDataFromDB(req){
     var con = mysql.createConnection({
       host: `127.0.0.1`,
@@ -14,7 +14,7 @@ let dbData = {
         if(err) throw err;
     
         for(let elem in result){
-          this.res.push(result[elem]);
+          this.DBresponse.push(result[elem]);
         }
         resolve();
       })
