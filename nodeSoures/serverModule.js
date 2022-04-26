@@ -36,8 +36,10 @@ const server = http.createServer((req, res) => {
             console.log(r.sql);
             let p = dbData.getDataFromDB(r.sql);
             p.then(() => {
+                body = "";
                 console.log(dbData.DBresponse)
                 res.end(JSON.stringify(dbData.DBresponse));
+                dbData.DBresponse = new Array;
             })
             
         });

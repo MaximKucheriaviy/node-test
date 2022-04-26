@@ -1,14 +1,18 @@
 document.querySelector('.reqButton').onclick = () =>{
-    let data = new FormData;
-    data.append('NodeReqestType', 'mysql');
-    data.append('sql', 'SELECT * FROM users');
-    xhr = new XMLHttpRequest;
-    xhr.open("POST", "127. 0. 0. 1:3000", false);
-
-    xhr.send(data);
-
-    xhr.responseType = 'text';
-    xhr.onload = () =>{
-        alert(xhr.response);
-    }
+    let tableData;
+    let p = new Promise((resolve, reqect) =>{
+        let data = new FormData;
+        data.append('NodeReqestType', 'mysql');
+        data.append('sql', 'SELECT * FROM users');
+        xhr = new XMLHttpRequest;
+        xhr.open("POST", "localhost");
+        xhr.send(data);
+        xhr.onload = () =>{
+            tableData = JSON.parse(xhr.response);
+            resolve();
+        }
+    })
+    p.then(() =>{
+        document.body.append(createTableFromData(tableData));
+    })
 }
