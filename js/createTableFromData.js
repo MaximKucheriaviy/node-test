@@ -1,25 +1,21 @@
 function createTableFromData(data){
-    const table = document.createElement('table');
+    const table = document.createElement('div');
+
+    table.classList.add('table');
     const names = Object.keys(data[0]);
-    let tableRow = document.createElement('tr');
     for(let i = 0; i < names.length; i++){
-        const header = document.createElement('th');
+        let card = document.createElement('div');
+        card.classList.add('card')
+        const header = document.createElement('h3');
+        const text = document.createElement('p');
         header.textContent = names[i];
-        setDataAtribute('no', header);
-        tableRow.append(header);
+        text.textContent = data[0][names[i]];
+        card.append(header);
+        card.append(text);
+        table.append(card);
     }
-    table.append(tableRow);
-    for(let i = 0; i < data.length; i++){
-        tableRow = document.createElement('tr');
-        for(let j = 0; j < names.length; j++){
-            const text = document.createElement('td');
-            text.textContent = data[i][names[j]]
-            setDataAtribute(names[j], text);
-            tableRow.append(text);
-        }
-        table.append(tableRow);
-    }
-    table.classList.add('clicable-table');
-    tableClicker(table);
+    
+    // table.classList.add('clicable-table');
+    // tableClicker(table);
     return table;
 }

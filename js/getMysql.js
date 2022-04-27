@@ -1,5 +1,5 @@
-getDataFromDB = (querry, backward) => {
-    if(!backward) globals.sql.back.push(querry);
+getDataFromDB = (querry) => {
+    // if(!backward) globals.sql.back.push(querry);
     let tableData;
     let p = new Promise((resolve, reqect) =>{
         let data = new FormData;
@@ -18,4 +18,4 @@ getDataFromDB = (querry, backward) => {
     })
 }
 
-getDataFromDB("SHOW TABLES");
+// getDataFromDB("SHOW TABLES");

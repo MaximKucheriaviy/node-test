@@ -6,7 +6,7 @@ let dbData = {
     var con = mysql.createConnection({
       host: `127.0.0.1`,
       user: "nodeUser",
-      database: "db",
+      database: "mus",
       password: "mts53435343A!"  
     });
     const q = new Promise((resolve, reject) =>{
