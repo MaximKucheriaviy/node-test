@@ -33,11 +33,11 @@ const server = http.createServer((req, res) => {
         });
         req.on('end', () => {
             let r = formDataParser(body);
-            console.log(r.sql);
+            
             let p = dbData.getDataFromDB(r.sql);
             p.then(() => {
                 body = "";
-                console.log(dbData.DBresponse)
+                // console.log(dbData.DBresponse)
                 res.end(JSON.stringify(dbData.DBresponse));
                 dbData.DBresponse = new Array;
             })

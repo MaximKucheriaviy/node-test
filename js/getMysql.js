@@ -1,9 +1,10 @@
-document.querySelector('.reqButton').onclick = () =>{
+getDataFromDB = (querry, backward) => {
+    if(!backward) globals.sql.back.push(querry);
     let tableData;
     let p = new Promise((resolve, reqect) =>{
         let data = new FormData;
         data.append('NodeReqestType', 'mysql');
-        data.append('sql', 'SELECT * FROM users');
+        data.append('sql', querry);
         xhr = new XMLHttpRequest;
         xhr.open("POST", "localhost");
         xhr.send(data);
@@ -13,6 +14,8 @@ document.querySelector('.reqButton').onclick = () =>{
         }
     })
     p.then(() =>{
-        document.body.append(createTableFromData(tableData));
+        showTable(createTableFromData(tableData));
     })
 }
+
+getDataFromDB("SHOW TABLES");

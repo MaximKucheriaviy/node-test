@@ -21,7 +21,7 @@ let dbData = {
     })
     con.end((err) =>{
       if(err) throw err;
-      console.log("Connection closed");
+      console.log(`SQLreqest: ${req}`);
     })
     return q;
   }
