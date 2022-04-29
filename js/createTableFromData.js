@@ -9,8 +9,13 @@ function createTableFromData(data){
         tableRow.append(header);
     }
     table.append(tableRow);
+    let triger = true;
     for(let i = 0; i < data.length; i++){
         tableRow = document.createElement('tr');
+        if(triger){
+            tableRow.classList.add("tableRow--colored");
+        }
+        triger = !triger;
         for(let j = 0; j < names.length; j++){
             const text = document.createElement('td');
             text.textContent = data[i][names[j]]
