@@ -1,4 +1,4 @@
-function createTableFromData(data){
+function createTableFromData(data, ID){
     const table = document.createElement('div');
 
     table.classList.add('table');
@@ -7,9 +7,17 @@ function createTableFromData(data){
         let card = document.createElement('div');
         card.classList.add('card')
         const header = document.createElement('h3');
-        const text = document.createElement('p');
+        let text;
+        if(names[i] == 'Preview'){
+            text = document.createElement('img');
+            console.log(ID);
+            text.src = `./img/${ID}`;
+        }
+        else{
+            text = document.createElement('p');
+            text.textContent = data[0][names[i]];
+        }
         header.textContent = names[i];
-        text.textContent = data[0][names[i]];
         card.append(header);
         card.append(text);
         table.append(card);

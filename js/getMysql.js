@@ -1,4 +1,4 @@
-getDataFromDB = (querry) => {
+getDataFromDB = (querry, ID) => {
     // if(!backward) globals.sql.back.push(querry);
     let tableData;
     let p = new Promise((resolve, reqect) =>{
@@ -14,7 +14,7 @@ getDataFromDB = (querry) => {
         }
     })
     p.then(() =>{
-        showTable(createTableFromData(tableData));
+        showTable(createTableFromData(tableData, ID));
     })
 }
 
