@@ -1,0 +1,2 @@
+*{box-sizing:border-box}h3,p{padding:0;margin:0}.table{padding-left:50px;padding-right:50px;margin-top:30px;display:flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap;gap:30px}.card{padding:10px;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid black}.card p{font-size:13px}.card h3{font-size:14px}.image-thumb{width:40%}.image-thumb img{width:100%}.text-thumb{max-width:60%}.button-div{margin-top:30px}
+/*# sourceMappingURL=main.min.css.map */

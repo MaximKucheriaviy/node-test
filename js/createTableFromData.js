@@ -1,6 +1,8 @@
 function createTableFromData(data, ID){
     const table = document.createElement('div');
-
+    const imageThumb = document.createElement('div');
+    const textThumb = document.createElement('div');
+    const image = document.createElement('img');
     table.classList.add('table');
     const names = Object.keys(data[0]);
     for(let i = 0; i < names.length; i++){
@@ -9,18 +11,27 @@ function createTableFromData(data, ID){
         const header = document.createElement('h3');
         let text;
         if(names[i] == 'Preview'){
-            text = document.createElement('img');
             console.log(ID);
-            text.src = `./img/${ID}`;
+            image.src = `./img/${data[0][names[i]]}`;
+            continue;
         }
         else{
             text = document.createElement('p');
             text.textContent = data[0][names[i]];
+            if(names[i] == "Kod"){
+                globals.currentID = data[0][names[i]];
+                console.log(globals.currentID);
+            }
         }
         header.textContent = names[i];
         card.append(header);
         card.append(text);
-        table.append(card);
+        textThumb.append(card);
+        imageThumb.append(image);
+        textThumb.classList.add("text-thumb")
+        imageThumb.classList.add("image-thumb")
+        table.append(textThumb)
+        table.append(imageThumb);
     }
     
     // table.classList.add('clicable-table');
