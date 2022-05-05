@@ -11,7 +11,7 @@ h3, p{
     margin-top: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -27,17 +27,18 @@ h3, p{
         font-size: 13px;
     }
     & h3{
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 400;
     }
 }
 .image-thumb{
-    width: 40%;
+   width: 200px;
 }
 .image-thumb img{
     width: 100%;
 }
 .text-thumb{
-    max-width: 60%;
+    min-width: 50%
 }
 
 .button-div{

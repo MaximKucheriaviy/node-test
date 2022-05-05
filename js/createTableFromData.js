@@ -15,6 +15,15 @@ function createTableFromData(data, ID){
             image.src = `./img/${data[0][names[i]]}`;
             continue;
         }
+        else if(names[i] === 'INС_Date'){
+            text = document.createElement('p');
+            const content = data[0][names[i]];
+            text.textContent = content.substr(0, 10);
+            if(names[i] == "Kod"){
+                globals.currentID = data[0][names[i]];
+                console.log(globals.currentID);
+            }
+        }
         else{
             text = document.createElement('p');
             text.textContent = data[0][names[i]];
