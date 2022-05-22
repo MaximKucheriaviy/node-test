@@ -25,6 +25,7 @@ setDataToAsside = (data, mode = 'clear') => {
                         const deviceList__Item = document.createElement('li');
                         const deviceList__Text = document.createElement('p');
                         deviceList__Text.textContent = j.ADName;
+                        deviceList__Text.classList.add('sidebar__devise-name');
                         deviceList__Item.append(deviceList__Text);
                         deviceList.append(deviceList__Item);
                         deviceList.classList.add('visually-hidden');
