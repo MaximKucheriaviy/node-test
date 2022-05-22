@@ -5,9 +5,9 @@ setDataToAsside = (data, mode = 'clear') => {
         const itemsArr = [];
         for(const value of data){
             const item = document.createElement('li');
-            const text = document.createElement('p');
+            const text = document.createElement('p');   
             text.textContent = value.Name;
-            text.classList.add('sidebar__palnet-name');
+            text.classList.add("sidebar__palnet-name");
             item.append(text);
             list.append(item);
             const devReq = {
@@ -27,6 +27,7 @@ setDataToAsside = (data, mode = 'clear') => {
                         deviceList__Text.textContent = j.ADName;
                         deviceList__Item.append(deviceList__Text);
                         deviceList.append(deviceList__Item);
+                        deviceList.classList.add('visually-hidden');
                     }
                     i.item.append(deviceList);
                 })

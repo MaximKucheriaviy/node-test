@@ -35,4 +35,12 @@ body {
   height: 100vh;
   border-right: 1px solid black;
 }
+
+.sidebar__palnet-name {
+  cursor: pointer;
+}
+
+.sidebar__palnet-name:hover {
+  color: aqua;
+}
 /*# sourceMappingURL=main.css.map */
